@@ -1,6 +1,13 @@
 const express = require("express");
 const app = express();
-app.get("", (req, res) => {
+
+const myLogger = (req, res, next) => {
+  console.log("LOGGED");
+  next();
+};
+app.use(myLogger);
+
+app.get("/", (req, res) => {
   res.send("/carsales /mecca /mecca/product /fun/yourname/yourage ");
 });
 app.get("/carsales", (req, res) => {
@@ -20,5 +27,3 @@ app.get("/fun/:name/:age", (req, res) => {
 });
 app.listen(5777);
 console.log("server is running on port 5777...");
-
-// my quest coming part is not working
