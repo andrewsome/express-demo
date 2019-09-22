@@ -1,14 +1,13 @@
 const express = require("express");
+const mw = require("./middleware.js");
 const app = express();
 
-const myLogger = (req, res, next) => {
-  console.log("LOGGED");
-  next();
-};
-app.use(myLogger);
+app.use(mw());
 
 app.get("/", (req, res) => {
-  res.send("/carsales /mecca /mecca/product /fun/yourname/yourage ");
+  let responseMessage =
+    "/carsales /carsales/car /mecca /mecca/product /fun/yourname/yourage ";
+  res.send(`${responseMessage}`);
 });
 app.get("/carsales", (req, res) => {
   res.send("carsales");
