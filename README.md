@@ -1,4 +1,4 @@
-# HomeWork, please merge this to master branch
+# HomeWork. Great work, keep going.
 
 This project is in-class practice, which use Node.js and Express framework to demonstrate how server-side response requset from client-side.
 
